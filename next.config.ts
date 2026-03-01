@@ -1,8 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  reactStrictMode: true,
+  devIndicators: false, //this to remove the next logo
+  images: {
+    domains: [],
+  },
+  turbopack: {},
 };
 
 export default nextConfig;
