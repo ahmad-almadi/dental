@@ -41,7 +41,7 @@ function DoctorCard({ doctor, index }: { doctor: typeof doctors[0]; index: numbe
         y: -12,
         transition: { duration: 0.2, ease: 'easeOut' }
       }}
-      className="h-[420px]"
+      className="h-[380px] sm:h-[400px] md:h-[420px]"
       style={{ 
         perspective: '1000px',
         willChange: 'transform'
@@ -56,7 +56,7 @@ function DoctorCard({ doctor, index }: { doctor: typeof doctors[0]; index: numbe
       >
         {/* Front Side */}
         <div
-          className="absolute w-full h-full glass rounded-2xl p-6 flex flex-col items-center justify-between transition-shadow duration-200"
+          className="absolute w-full h-full glass rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-between transition-shadow duration-200"
           style={{
             backfaceVisibility: 'hidden',
             WebkitBackfaceVisibility: 'hidden',
@@ -68,32 +68,32 @@ function DoctorCard({ doctor, index }: { doctor: typeof doctors[0]; index: numbe
             <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4">
               <FontAwesomeIcon icon={faUserMd} className="text-5xl text-primary" />
             </div>
-            <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-white text-center">
+            <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-800 dark:text-white text-center">
               {doctor.name}
             </h3>
-            <p className="text-primary font-semibold mb-3 text-center">{doctor.specialty}</p>
-            <p className="text-sm text-gray-600 dark:text-gray-400 text-center px-2">
+            <p className="text-primary font-semibold mb-3 text-center text-sm sm:text-base">{doctor.specialty}</p>
+            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 text-center px-2">
               {doctor.experience}
             </p>
           </div>
 
-          <div className="flex gap-3 mt-4">
+          <div className="flex gap-2 sm:gap-3 mt-4">
             <button
-              className="w-10 h-10 glass rounded-full flex items-center justify-center text-primary shadow-medium transition-all duration-150 hover:scale-110 hover:shadow-glow"
+              className="w-8 h-8 sm:w-10 sm:h-10 glass rounded-full flex items-center justify-center text-primary shadow-medium transition-all duration-150 hover:scale-110 hover:shadow-glow text-sm sm:text-base"
               title="Email"
               onClick={(e) => e.stopPropagation()}
             >
               <FontAwesomeIcon icon={faEnvelope} />
             </button>
             <button
-              className="w-10 h-10 glass rounded-full flex items-center justify-center text-primary shadow-medium transition-all duration-150 hover:scale-110 hover:shadow-glow"
+              className="w-8 h-8 sm:w-10 sm:h-10 glass rounded-full flex items-center justify-center text-primary shadow-medium transition-all duration-150 hover:scale-110 hover:shadow-glow text-sm sm:text-base"
               title="Call"
               onClick={(e) => e.stopPropagation()}
             >
               <FontAwesomeIcon icon={faPhone} />
             </button>
             <button
-              className="w-10 h-10 glass rounded-full flex items-center justify-center text-primary shadow-medium transition-all duration-150 hover:scale-110 hover:shadow-glow"
+              className="w-8 h-8 sm:w-10 sm:h-10 glass rounded-full flex items-center justify-center text-primary shadow-medium transition-all duration-150 hover:scale-110 hover:shadow-glow text-sm sm:text-base"
               title="Profile"
               onClick={(e) => e.stopPropagation()}
             >
@@ -108,7 +108,7 @@ function DoctorCard({ doctor, index }: { doctor: typeof doctors[0]; index: numbe
 
         {/* Back Side */}
         <div
-          className="absolute w-full h-full glass rounded-2xl p-6 flex flex-col items-center justify-between shadow-strong"
+          className="absolute w-full h-full glass rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-between shadow-strong"
           style={{
             backfaceVisibility: 'hidden',
             WebkitBackfaceVisibility: 'hidden',
@@ -117,10 +117,10 @@ function DoctorCard({ doctor, index }: { doctor: typeof doctors[0]; index: numbe
           }}
         >
           <div className="flex flex-col items-center flex-1 justify-center w-full">
-            <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-white text-center">
+            <h3 className="text-lg sm:text-xl font-bold mb-4 text-gray-800 dark:text-white text-center">
               Contact Information
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 text-center mb-6 text-sm px-2">
+            <p className="text-gray-700 dark:text-gray-300 text-center mb-6 text-xs sm:text-sm px-2">
               {doctor.experience}
             </p>
             <div className="space-y-3 w-full px-2">
@@ -158,23 +158,23 @@ export default function Doctors() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="doctors" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-6">
+    <section id="doctors" className="py-12 md:py-20 bg-gradient-to-br from-cyan-50/50 via-white/80 to-blue-50/50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-indigo-950/50 dark:to-slate-900">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           ref={ref}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white">
             Meet Our <span className="text-primary">Experts</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg">
+          <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg">
             Experienced professionals dedicated to your smile
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {doctors.map((doctor, index) => (
             <DoctorCard key={index} doctor={doctor} index={index} />
           ))}

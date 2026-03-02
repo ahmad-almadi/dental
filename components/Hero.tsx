@@ -70,11 +70,11 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative h-screen gradient-bg overflow-hidden">
+    <section id="hero" className="relative min-h-screen pt-20 md:pt-0 md:h-screen gradient-bg overflow-hidden">
       <Particles />
 
-      <div className="container mx-auto px-6 h-full flex items-center">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full">
+      <div className="container mx-auto px-4 md:px-6 h-full flex items-center py-8 md:py-0">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center w-full">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -85,7 +85,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-4xl md:text-6xl font-bold mb-6 text-gray-800 dark:text-white"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-gray-800 dark:text-white leading-tight"
             >
               Your Smile, <br />
               <span className="text-primary">Our Passion</span>
@@ -95,7 +95,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8"
+              className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 md:mb-8"
             >
               Advanced Dental Care with Modern Technology
             </motion.p>
@@ -104,20 +104,20 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+              className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start"
             >
               <motion.a
                 href="#appointment"
                 whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(77, 166, 255, 0.4), 0 15px 50px rgba(77, 166, 255, 0.25)' }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-primary text-white px-6 md:px-8 py-3 md:py-4 rounded-2xl shadow-glow font-semibold text-center"
+                className="bg-primary text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-2xl shadow-glow font-semibold text-center text-sm sm:text-base"
               >
                 Book Appointment
               </motion.a>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="glass px-6 md:px-8 py-3 md:py-4 rounded-2xl font-semibold text-gray-700 dark:text-white shadow-medium"
+                className="glass px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-2xl font-semibold text-gray-700 dark:text-white shadow-medium text-sm sm:text-base"
               >
                 Free Consultation
               </motion.button>
@@ -128,7 +128,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="relative h-[350px] md:h-[500px] glass rounded-3xl overflow-hidden shadow-strong"
+            className="relative h-[280px] sm:h-[350px] md:h-[450px] lg:h-[500px] glass rounded-2xl md:rounded-3xl overflow-hidden shadow-strong"
             onMouseDown={() => setIsDragging(true)}
             onMouseUp={() => setIsDragging(false)}
             onMouseLeave={() => setIsDragging(false)}
@@ -169,15 +169,15 @@ export default function Hero() {
               </div>
 
               {/* Labels */}
-              <div className="absolute top-4 left-4 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-semibold">
+              <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-black/70 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold">
                 Before
               </div>
-              <div className="absolute top-4 right-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
+              <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-primary text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold">
                 After
               </div>
             </div>
 
-            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-gray-600 dark:text-gray-300 bg-white/90 dark:bg-gray-800/90 px-4 py-2 rounded-full">
+            <p className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 text-xs sm:text-sm text-gray-600 dark:text-gray-300 bg-white/90 dark:bg-gray-800/90 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full">
               Drag to compare
             </p>
           </motion.div>

@@ -53,27 +53,27 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900 overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="py-12 md:py-20 bg-gradient-to-br from-blue-50/50 via-white/80 to-indigo-50/50 dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-950/50 dark:to-slate-900 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           ref={ref}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold mb-4 text-gray-800 dark:text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white">
             Patient <span className="text-primary">Testimonials</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg">
+          <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg">
             What our happy patients say about us
           </p>
         </motion.div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto px-8 sm:px-12 md:px-0">
           {/* Left Arrow */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 md:-translate-x-16 -translate-x-4 z-10 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform"
+            className="absolute left-0 top-1/2 -translate-y-1/2 md:-translate-x-16 -translate-x-2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform text-sm sm:text-base"
           >
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
@@ -81,7 +81,7 @@ export default function Testimonials() {
           {/* Right Arrow */}
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-16 translate-x-4 z-10 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform"
+            className="absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-16 translate-x-2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform text-sm sm:text-base"
           >
             <FontAwesomeIcon icon={faChevronRight} />
           </button>
@@ -93,13 +93,13 @@ export default function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="glass rounded-3xl p-12 text-center shadow-strong"
+              className="glass rounded-3xl p-6 sm:p-8 md:p-12 text-center shadow-strong"
             >
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2 }}
-                className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden"
+                className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 mx-auto mb-6 rounded-full overflow-hidden"
               >
                 <img 
                   src={testimonials[current].image} 
@@ -115,7 +115,7 @@ export default function Testimonials() {
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.3 + i * 0.1 }}
-                    className="text-yellow-400 text-2xl"
+                    className="text-yellow-400 text-xl sm:text-2xl"
                   >
                     <FontAwesomeIcon icon={faStar} />
                   </motion.div>
@@ -126,7 +126,7 @@ export default function Testimonials() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl text-gray-700 dark:text-gray-300 mb-6 italic"
+                className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 italic px-2"
               >
                 "{testimonials[current].text}"
               </motion.p>
@@ -135,7 +135,7 @@ export default function Testimonials() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="text-2xl font-bold text-gray-800 dark:text-white"
+                className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white"
               >
                 {testimonials[current].name}
               </motion.h4>

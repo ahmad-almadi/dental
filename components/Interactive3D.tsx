@@ -76,18 +76,18 @@ export default function Interactive3D() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section className="py-20 gradient-bg">
-      <div className="container mx-auto px-6">
+    <section className="py-12 md:py-20 gradient-bg">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           ref={ref}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white">
             Interactive <span className="text-primary">3D Dentures Model</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg">
+          <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg">
             Explore our advanced dental prosthetics
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ export default function Interactive3D() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="h-[500px] md:h-[600px] glass rounded-3xl overflow-hidden shadow-strong bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 relative"
+          className="h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] glass rounded-2xl md:rounded-3xl overflow-hidden shadow-strong bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-slate-900 dark:via-blue-950 dark:to-slate-900 relative"
         >
           <Canvas 
             camera={{ position: [0, 0, 5], fov: 50 }}
@@ -134,27 +134,13 @@ export default function Interactive3D() {
               />
             </Suspense>
           </Canvas>
-          
-          {/* Multiple overlays to completely hide any badges */}
-          <div className="absolute bottom-0 left-0 w-40 h-40 pointer-events-none" style={{ zIndex: 999 }}>
-            <div className="absolute inset-0 bg-gradient-to-tr from-gray-50 via-gray-50 to-transparent dark:from-gray-800 dark:via-gray-800"></div>
-          </div>
-          <div className="absolute bottom-0 right-0 w-40 h-40 pointer-events-none" style={{ zIndex: 999 }}>
-            <div className="absolute inset-0 bg-gradient-to-tl from-gray-50 via-gray-50 to-transparent dark:from-gray-800 dark:via-gray-800"></div>
-          </div>
-          <div className="absolute top-0 left-0 w-40 h-40 pointer-events-none" style={{ zIndex: 999 }}>
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-gray-50 to-transparent dark:from-gray-800 dark:via-gray-800"></div>
-          </div>
-          <div className="absolute top-0 right-0 w-40 h-40 pointer-events-none" style={{ zIndex: 999 }}>
-            <div className="absolute inset-0 bg-gradient-to-bl from-gray-50 via-gray-50 to-transparent dark:from-gray-800 dark:via-gray-800"></div>
-          </div>
         </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.5 }}
-          className="text-center mt-8 text-gray-600 dark:text-gray-400"
+          className="text-center mt-6 md:mt-8 text-sm md:text-base text-gray-600 dark:text-gray-400"
         >
           Drag to rotate • Scroll to zoom • Auto-rotating
         </motion.p>

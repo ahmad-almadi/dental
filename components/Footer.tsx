@@ -114,7 +114,6 @@ export default function Footer() {
             height="100%"
             style={{ border: 0 }}
             allowFullScreen
-            loading="lazy"
           />
         </motion.div>
 

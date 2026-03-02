@@ -16,11 +16,12 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   overflow-x: hidden;
-  background: #f0f2f5;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8f0f7 50%, #dce9f5 100%);
+  min-height: 100vh;
 }
 
 .dark body {
-  background: #0f1419;
+  background: linear-gradient(135deg, #0a1929 0%, #0f1f2e 50%, #0a1929 100%);
 }
 
 .glass {
@@ -35,11 +36,11 @@ body {
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, #e8eef3 0%, #f5f7fa 50%, #e0e7ee 100%);
+  background: linear-gradient(135deg, #e3f2fd 0%, #f1f8ff 50%, #e8f4f9 100%);
 }
 
 .dark .gradient-bg {
-  background: linear-gradient(135deg, #0a1929 0%, #1a2332 50%, #0f1419 100%);
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #0d1b2a 100%);
 }
 
 .skeleton {
